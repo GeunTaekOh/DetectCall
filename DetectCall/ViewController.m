@@ -17,9 +17,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self sharingJsonDataToCallKit];
     
+}
+
+- (void) sharingJsonDataToCallKit{
+    NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults] initWithSuiteName:@"group.com.geuntaek.DetectCall"];
     
+    NSMutableArray * phoneBookDatas = [self loadJsonFile];
     
+    NSData * data = [NSKeyedArchiver archivedDataWithRootObject:phoneBookDatas];
+    [userDefaults setObject:data forKey:@"dbData"];
+    
+}
+
+
+-(NSMutableArray*) loadJsonFile{
+    NSMutableArray<NSDictionary*> * dbData = [[NSMutableArray alloc] init];
+    
+    NSURL * file = [[NSBundle mainBundle] URLForResource:@"DBData" withExtension:@"json"];
+    NSData * data = [[NSData alloc] initWithContentsOfURL:file];
+    NSArray<NSDictionary*> *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    for(NSDictionary<NSNumber *, NSString *>* object in json){
+        [dbData addObject:object];
+    }
+    return dbData;
 }
 
 - (IBAction)clickBtn:(id)sender {

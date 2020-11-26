@@ -46,41 +46,39 @@
     //
     // Numbers must be provided in numerically ascending order.
     
-    
-    
-    NSLog(@"DETECT // [add All Blocking PhoneNumbers To Context]");
-    
-    CXCallDirectoryPhoneNumber allPhoneNumbers[] = { 14085555555, 18005555555 };
-    NSUInteger count = (sizeof(allPhoneNumbers) / sizeof(CXCallDirectoryPhoneNumber));
-    for (NSUInteger index = 0; index < count; index += 1) {
-        CXCallDirectoryPhoneNumber phoneNumber = allPhoneNumbers[index];
-        NSLog(@"DETECT // phone : %lld", phoneNumber);
-        [context addBlockingEntryWithNextSequentialPhoneNumber:phoneNumber];
-    }
+//    NSLog(@"DETECT // [add All Blocking PhoneNumbers To Context]");
+//
+//    CXCallDirectoryPhoneNumber allPhoneNumbers[] = { 14085555555, 18005555555 };
+//    NSUInteger count = (sizeof(allPhoneNumbers) / sizeof(CXCallDirectoryPhoneNumber));
+//    for (NSUInteger index = 0; index < count; index += 1) {
+//        CXCallDirectoryPhoneNumber phoneNumber = allPhoneNumbers[index];
+//        NSLog(@"DETECT // phone : %lld", phoneNumber);
+//        [context addBlockingEntryWithNextSequentialPhoneNumber:phoneNumber];
+//    }
 }
 
 - (void)addOrRemoveIncrementalBlockingPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
     // Retrieve any changes to the set of phone numbers to block from data store. For optimal performance and memory usage when there are many phone numbers,
     // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
     
-    NSLog(@"DETECT // [add Or Remove Incremental Blocking PhoneNumbers To Context]");
-    
-    CXCallDirectoryPhoneNumber phoneNumbersToAdd[] = { 14085551234 };
-    NSUInteger countOfPhoneNumbersToAdd = (sizeof(phoneNumbersToAdd) / sizeof(CXCallDirectoryPhoneNumber));
-
-    for (NSUInteger index = 0; index < countOfPhoneNumbersToAdd; index += 1) {
-        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToAdd[index];
-        NSLog(@"DETECT // phone : %lld", phoneNumber);
-        [context addBlockingEntryWithNextSequentialPhoneNumber:phoneNumber];
-    }
-
-    CXCallDirectoryPhoneNumber phoneNumbersToRemove[] = { 18005555555 };
-    NSUInteger countOfPhoneNumbersToRemove = (sizeof(phoneNumbersToRemove) / sizeof(CXCallDirectoryPhoneNumber));
-    for (NSUInteger index = 0; index < countOfPhoneNumbersToRemove; index += 1) {
-        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToRemove[index];
-        NSLog(@"DETECT // phone : %lld", phoneNumber);
-        [context removeBlockingEntryWithPhoneNumber:phoneNumber];
-    }
+//    NSLog(@"DETECT // [add Or Remove Incremental Blocking PhoneNumbers To Context]");
+//
+//    CXCallDirectoryPhoneNumber phoneNumbersToAdd[] = { 14085551234 };
+//    NSUInteger countOfPhoneNumbersToAdd = (sizeof(phoneNumbersToAdd) / sizeof(CXCallDirectoryPhoneNumber));
+//
+//    for (NSUInteger index = 0; index < countOfPhoneNumbersToAdd; index += 1) {
+//        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToAdd[index];
+//        NSLog(@"DETECT // phone : %lld", phoneNumber);
+//        [context addBlockingEntryWithNextSequentialPhoneNumber:phoneNumber];
+//    }
+//
+//    CXCallDirectoryPhoneNumber phoneNumbersToRemove[] = { 18005555555 };
+//    NSUInteger countOfPhoneNumbersToRemove = (sizeof(phoneNumbersToRemove) / sizeof(CXCallDirectoryPhoneNumber));
+//    for (NSUInteger index = 0; index < countOfPhoneNumbersToRemove; index += 1) {
+//        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToRemove[index];
+//        NSLog(@"DETECT // phone : %lld", phoneNumber);
+//        [context removeBlockingEntryWithPhoneNumber:phoneNumber];
+//    }
 
     // Record the most-recently loaded set of blocking entries in data store for the next incremental load...
 }
@@ -104,57 +102,79 @@
 //    }
     //context.inputItems
     
-    NSLog(@"DETECT // context input items : %@",context.inputItems.description);
+//    NSLog(@"DETECT // context input items : %@",context.inputItems.description);
+//
+//    NSDictionary<NSNumber *, NSString *> *labelsKeyedByPhoneNumber = @{
+//        @821077639375:@"경영지원시스템실 신연수 책임",
+//        @821082859212:@"니지팸 꼬르",
+//        @821090926572:@"그룹웨어기술팀 최종윤 책임",
+//        @821054947694:@"니지팸 정동제",
+//        @821067454412:@"그룹웨어기술팀 오근택 책임",
+//        @821076202711:@"손이가 전연희 대리"
+//    };
+//        for (NSNumber *phoneNumber in [labelsKeyedByPhoneNumber.allKeys sortedArrayUsingSelector:@selector(compare:)]) {
+//
+//           NSString *label = labelsKeyedByPhoneNumber[phoneNumber];
+//            NSLog(@"DETECT // phone : %@", phoneNumber);
+//            NSLog(@"DETECT // label : %@", label);
+//
+//           [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[phoneNumber unsignedLongLongValue] label:label];
+//        }
     
-    NSDictionary<NSNumber *, NSString *> *labelsKeyedByPhoneNumber = @{
-        @821077639375:@"경영지원시스템실 신연수 책임",
-        @821082859212:@"니지팸 꼬르",
-        @821090926572:@"그룹웨어기술팀 최종윤 책임",
-        @821054947694:@"니지팸 정동제",
-        @821067454412:@"그룹웨어기술팀 오근택 책임",
-        @821076202711:@"손이가 전연희 대리"
-    };
-        for (NSNumber *phoneNumber in [labelsKeyedByPhoneNumber.allKeys sortedArrayUsingSelector:@selector(compare:)]) {
-            
-           NSString *label = labelsKeyedByPhoneNumber[phoneNumber];
-            NSLog(@"DETECT // phone : %@", phoneNumber);
-            NSLog(@"DETECT // label : %@", label);
-            
-           [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[phoneNumber unsignedLongLongValue] label:label];
-        }
+    NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults] initWithSuiteName:@"group.com.geuntaek.DetectCall"];
     
+    NSMutableDictionary<NSNumber *, NSString *> *labelsKeyedByPhoneNumber = [[NSMutableDictionary alloc] init];
     
+    NSData * data = [userDefaults objectForKey:@"dbData"];
+    
+    NSArray * dbData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    for (NSDictionary * data in dbData){
+        NSString * name = [data objectForKey:@"name"];
+        NSNumber * num = [data objectForKey:@"phoneNumber"];
+        [labelsKeyedByPhoneNumber setObject:name forKey:num];
+    }
+    
+    for(NSNumber * phoneNumber in [labelsKeyedByPhoneNumber.allKeys sortedArrayUsingSelector:@selector(compare:)]){
+        
+        NSString * label = labelsKeyedByPhoneNumber[phoneNumber];
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        f.numberStyle = NSNumberFormatterDecimalStyle;
+        NSNumber * myNumber = [f numberFromString:phoneNumber];
+        
+        [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[myNumber unsignedLongLongValue] label:label];
+    }
 }
 
 - (void)addOrRemoveIncrementalIdentificationPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
     // Retrieve any changes to the set of phone numbers to identify (and their identification labels) from data store. For optimal performance and memory usage when there are many phone numbers,
     // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
     
-    NSLog(@"DETECT // [add Or Remove Incremental Identification PhoneNumbers To Context]");
-    
-//    CXCallDirectoryPhoneNumber phoneNumbersToAdd[] = { 14085555678 };
-//    NSArray<NSString *> *labelsToAdd = @[ @"New local business" ];
-    
-    CXCallDirectoryPhoneNumber phoneNumbersToAdd[] = { 821054947694, 821067454412, 821076202711, 821077639375, 821082859212, 821090926572, };
-    NSArray<NSString *> *labelsToAdd = @[ @"니지팸 정동제", @"그룹웨어기술팀 오근택 책임", @"손이가 전연희 대리", @"경영지원시스템실 신연수 책임",@"니지팸 꼬르", @"그룹웨어기술팀 최종윤 책임" ];
-    
-    NSUInteger countOfPhoneNumbersToAdd = (sizeof(phoneNumbersToAdd) / sizeof(CXCallDirectoryPhoneNumber));
-
-    for (NSUInteger i = 0; i < countOfPhoneNumbersToAdd; i += 1) {
-        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToAdd[i];
-        NSString *label = labelsToAdd[i];
-        NSLog(@"DETECT // phone : %lld", phoneNumber);
-        NSLog(@"DETECT // label : %@", label);
-        [context addIdentificationEntryWithNextSequentialPhoneNumber:phoneNumber label:label];
-    }
-
-    CXCallDirectoryPhoneNumber phoneNumbersToRemove[] = { 18885555555 };
-    NSUInteger countOfPhoneNumbersToRemove = (sizeof(phoneNumbersToRemove) / sizeof(CXCallDirectoryPhoneNumber));
-
-    for (NSUInteger i = 0; i < countOfPhoneNumbersToRemove; i += 1) {
-        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToRemove[i];
-        [context removeIdentificationEntryWithPhoneNumber:phoneNumber];
-    }
+//    NSLog(@"DETECT // [add Or Remove Incremental Identification PhoneNumbers To Context]");
+//
+////    CXCallDirectoryPhoneNumber phoneNumbersToAdd[] = { 14085555678 };
+////    NSArray<NSString *> *labelsToAdd = @[ @"New local business" ];
+//
+//    CXCallDirectoryPhoneNumber phoneNumbersToAdd[] = { 821054947694, 821067454412, 821076202711, 821077639375, 821082859212, 821090926572, };
+//    NSArray<NSString *> *labelsToAdd = @[ @"니지팸 정동제", @"그룹웨어기술팀 오근택 책임", @"손이가 전연희 대리", @"경영지원시스템실 신연수 책임",@"니지팸 꼬르", @"그룹웨어기술팀 최종윤 책임" ];
+//
+//    NSUInteger countOfPhoneNumbersToAdd = (sizeof(phoneNumbersToAdd) / sizeof(CXCallDirectoryPhoneNumber));
+//
+//    for (NSUInteger i = 0; i < countOfPhoneNumbersToAdd; i += 1) {
+//        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToAdd[i];
+//        NSString *label = labelsToAdd[i];
+//        NSLog(@"DETECT // phone : %lld", phoneNumber);
+//        NSLog(@"DETECT // label : %@", label);
+//        [context addIdentificationEntryWithNextSequentialPhoneNumber:phoneNumber label:label];
+//    }
+//
+//    CXCallDirectoryPhoneNumber phoneNumbersToRemove[] = { 18885555555 };
+//    NSUInteger countOfPhoneNumbersToRemove = (sizeof(phoneNumbersToRemove) / sizeof(CXCallDirectoryPhoneNumber));
+//
+//    for (NSUInteger i = 0; i < countOfPhoneNumbersToRemove; i += 1) {
+//        CXCallDirectoryPhoneNumber phoneNumber = phoneNumbersToRemove[i];
+//        [context removeIdentificationEntryWithPhoneNumber:phoneNumber];
+//    }
 
     // Record the most-recently loaded set of identification entries in data store for the next incremental load...
 }

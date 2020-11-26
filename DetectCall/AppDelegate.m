@@ -17,17 +17,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    CXCallDirectoryManager * manager = [CXCallDirectoryManager sharedInstance];
-    [manager reloadExtensionWithIdentifier:@"com.geuntaek.DetectCall.CallDirectoryHandler" completionHandler:^(NSError * _Nullable error) {
-        if(error == nil){
-            NSLog(@"DETECT // didFinishLaunchingWithOptions SUCCESS");
-        }else{
-            NSLog(@"=============");
-            NSLog(@"DETECT // didFinishLaunchingWithOptions FAIL");
-            NSLog(@"DETECT // error : %@", [error localizedDescription]);
-            NSLog(@"=============");
-        }
-    }];
+//    CXCallDirectoryManager * manager = [CXCallDirectoryManager sharedInstance];
+//    [manager reloadExtensionWithIdentifier:@"com.geuntaek.DetectCall.CallDirectoryHandler" completionHandler:^(NSError * _Nullable error) {
+//        if(error == nil){
+//            NSLog(@"DETECT // didFinishLaunchingWithOptions SUCCESS");
+//        }else{
+//            NSLog(@"=============");
+//            NSLog(@"DETECT // didFinishLaunchingWithOptions FAIL");
+//            NSLog(@"DETECT // error : %@", [error localizedDescription]);
+//            NSLog(@"=============");
+//        }
+//    }];
     
     return YES;
 }
