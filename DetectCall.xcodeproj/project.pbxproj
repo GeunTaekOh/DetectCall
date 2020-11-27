@@ -18,6 +18,7 @@
 		2E5543F72567319B00ED8071 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5543F62567319B00ED8071 /* main.m */; };
 		2E5544062567341D00ED8071 /* CallDirectoryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5544052567341D00ED8071 /* CallDirectoryHandler.m */; };
 		2E55440A2567341D00ED8071 /* CallDirectoryHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E5544022567341C00ED8071 /* CallDirectoryHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E9C172025707DDD0054E0C1 /* DBData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C171F25707DDD0054E0C1 /* DBData2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		2E5544042567341C00ED8071 /* CallDirectoryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallDirectoryHandler.h; sourceTree = "<group>"; };
 		2E5544052567341D00ED8071 /* CallDirectoryHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallDirectoryHandler.m; sourceTree = "<group>"; };
 		2E5544072567341D00ED8071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E9C171F25707DDD0054E0C1 /* DBData2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DBData2.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				2E5543F52567319B00ED8071 /* Info.plist */,
 				2E5543F62567319B00ED8071 /* main.m */,
 				2E5543ED2567319400ED8071 /* DetectCall.xcdatamodeld */,
+				2E9C171F25707DDD0054E0C1 /* DBData2.json */,
 				2E20B8D3256F8074005C6253 /* DBData.json */,
 			);
 			path = DetectCall;
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E5543F42567319B00ED8071 /* LaunchScreen.storyboard in Resources */,
+				2E9C172025707DDD0054E0C1 /* DBData2.json in Resources */,
 				2E5543F12567319B00ED8071 /* Assets.xcassets in Resources */,
 				2E5543EC2567319400ED8071 /* Main.storyboard in Resources */,
 				2E20B8D4256F8074005C6253 /* DBData.json in Resources */,
