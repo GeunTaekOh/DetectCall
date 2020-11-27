@@ -9,8 +9,6 @@
 
 @interface ViewController ()
 
-
-
 @end
 
 @implementation ViewController
@@ -19,7 +17,6 @@ static bool dataChange = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
 }
 
@@ -30,9 +27,7 @@ static bool dataChange = YES;
     
     NSData * data = [NSKeyedArchiver archivedDataWithRootObject:phoneBookDatas];
     [userDefaults setObject:data forKey:@"dbData"];
-    
 }
-
 
 -(NSMutableArray*) loadJsonFile{
     NSMutableArray<NSDictionary*> * dbData = [[NSMutableArray alloc] init];
@@ -58,7 +53,6 @@ static bool dataChange = YES;
 
 - (IBAction)clickBtn:(id)sender {
     CXCallDirectoryManager * manager = [CXCallDirectoryManager sharedInstance];
-    
     
     [self sharingJsonDataToCallKit];
     
