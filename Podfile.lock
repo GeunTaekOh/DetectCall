@@ -1,0 +1,22 @@
+PODS:
+  - Realm (10.3.0):
+    - Realm/Headers (= 10.3.0)
+  - Realm/Headers (10.3.0)
+  - YAJLO (0.3.3)
+
+DEPENDENCIES:
+  - Realm
+  - YAJLO
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - YAJLO
+
+SPEC CHECKSUMS:
+  Realm: 7957567daedece88d04866cdea419a5975f78e1b
+  YAJLO: 815b1709d78f28fcef8ad6daf9a1c20dc5c1ff6b
+
+PODFILE CHECKSUM: 8a480f98580229e4aa7ab5cbc898f33b4f6c0db3
+
+COCOAPODS: 1.10.0

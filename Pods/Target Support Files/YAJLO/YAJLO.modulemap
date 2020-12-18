@@ -1,0 +1,6 @@
+framework module YAJLO {
+  umbrella header "YAJLO-umbrella.h"
+
+  export *
+  module * { export * }
+}

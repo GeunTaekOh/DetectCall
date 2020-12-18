@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0682C62581E7B2009A4B44 /* DBData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E0682C52581E7B2009A4B44 /* DBData2.json */; };
 		2E20B8D4256F8074005C6253 /* DBData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E20B8D3256F8074005C6253 /* DBData.json */; };
 		2E5543E32567319400ED8071 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5543E22567319400ED8071 /* AppDelegate.m */; };
 		2E5543E62567319400ED8071 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5543E52567319400ED8071 /* SceneDelegate.m */; };
@@ -18,7 +19,21 @@
 		2E5543F72567319B00ED8071 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5543F62567319B00ED8071 /* main.m */; };
 		2E5544062567341D00ED8071 /* CallDirectoryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5544052567341D00ED8071 /* CallDirectoryHandler.m */; };
 		2E55440A2567341D00ED8071 /* CallDirectoryHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E5544022567341C00ED8071 /* CallDirectoryHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E6F7FBD2581EE1100847DA3 /* DBData3.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F7FBC2581EE1100847DA3 /* DBData3.json */; };
+		2E7A6D8E258066B2007EAD0B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7A6D8D258066B2007EAD0B /* libsqlite3.0.tbd */; };
+		2E7A6D9E25806759007EAD0B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6D9325806759007EAD0B /* FMDatabaseQueue.m */; };
+		2E7A6D9F25806759007EAD0B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6D9625806759007EAD0B /* FMDatabaseAdditions.m */; };
+		2E7A6DA02580675A007EAD0B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6D9725806759007EAD0B /* FMDatabase.m */; };
+		2E7A6DA12580675A007EAD0B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6D9B25806759007EAD0B /* FMDatabasePool.m */; };
+		2E7A6DA22580675A007EAD0B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6D9C25806759007EAD0B /* FMResultSet.m */; };
+		2E7C9C322580ABAE00EB360E /* DBData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C9C312580ABAE00EB360E /* DBData.json */; };
 		2E9C172025707DDD0054E0C1 /* DBData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C171F25707DDD0054E0C1 /* DBData2.json */; };
+		2EA6391C2580814D0016C738 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA6391B2580814D0016C738 /* CallKit.framework */; };
+		2EA6391F2580816A0016C738 /* CallDirectoryHandler.entitlements in Sources */ = {isa = PBXBuildFile; fileRef = 2E20B8CD256F788B005C6253 /* CallDirectoryHandler.entitlements */; };
+		2EA639202580816A0016C738 /* CallDirectoryHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 2E5544042567341C00ED8071 /* CallDirectoryHandler.h */; };
+		2EA639212580816A0016C738 /* CallDirectoryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5544052567341D00ED8071 /* CallDirectoryHandler.m */; };
+		405A597970DB3E2B141910CD /* Pods_CallDirectoryHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8DA7E734107135B0B3843C /* Pods_CallDirectoryHandler.framework */; };
+		44559035DEA52855848A0439 /* Pods_DetectCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52846D5CBF3878024EF6B8DB /* Pods_DetectCall.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		148E5105EC68BD19F751D692 /* Pods-DetectCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DetectCall.release.xcconfig"; path = "Target Support Files/Pods-DetectCall/Pods-DetectCall.release.xcconfig"; sourceTree = "<group>"; };
+		2E0682C52581E7B2009A4B44 /* DBData2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DBData2.json; sourceTree = "<group>"; };
 		2E20B8CA256F783D005C6253 /* DetectCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DetectCall.entitlements; sourceTree = "<group>"; };
 		2E20B8CD256F788B005C6253 /* CallDirectoryHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallDirectoryHandler.entitlements; sourceTree = "<group>"; };
 		2E20B8D3256F8074005C6253 /* DBData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DBData.json; sourceTree = SOURCE_ROOT; };
@@ -66,7 +83,27 @@
 		2E5544042567341C00ED8071 /* CallDirectoryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallDirectoryHandler.h; sourceTree = "<group>"; };
 		2E5544052567341D00ED8071 /* CallDirectoryHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallDirectoryHandler.m; sourceTree = "<group>"; };
 		2E5544072567341D00ED8071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E6F7FBC2581EE1100847DA3 /* DBData3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DBData3.json; sourceTree = "<group>"; };
+		2E7A6D8D258066B2007EAD0B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		2E7A6D9225806759007EAD0B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		2E7A6D9325806759007EAD0B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		2E7A6D9425806759007EAD0B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		2E7A6D9525806759007EAD0B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		2E7A6D9625806759007EAD0B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		2E7A6D9725806759007EAD0B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		2E7A6D9825806759007EAD0B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		2E7A6D9925806759007EAD0B /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		2E7A6D9A25806759007EAD0B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		2E7A6D9B25806759007EAD0B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		2E7A6D9C25806759007EAD0B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		2E7C9C312580ABAE00EB360E /* DBData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DBData.json; sourceTree = "<group>"; };
 		2E9C171F25707DDD0054E0C1 /* DBData2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DBData2.json; sourceTree = SOURCE_ROOT; };
+		2EA6391B2580814D0016C738 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		4B60CBA1F0C7FE05B00799C6 /* Pods-CallDirectoryHandler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallDirectoryHandler.release.xcconfig"; path = "Target Support Files/Pods-CallDirectoryHandler/Pods-CallDirectoryHandler.release.xcconfig"; sourceTree = "<group>"; };
+		4F1FDEF40FAEE4B19DE159BC /* Pods-CallDirectoryHandler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallDirectoryHandler.debug.xcconfig"; path = "Target Support Files/Pods-CallDirectoryHandler/Pods-CallDirectoryHandler.debug.xcconfig"; sourceTree = "<group>"; };
+		52846D5CBF3878024EF6B8DB /* Pods_DetectCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DetectCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8156E63F068E96559B64E1A /* Pods-DetectCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DetectCall.debug.xcconfig"; path = "Target Support Files/Pods-DetectCall/Pods-DetectCall.debug.xcconfig"; sourceTree = "<group>"; };
+		FE8DA7E734107135B0B3843C /* Pods_CallDirectoryHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallDirectoryHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA6391C2580814D0016C738 /* CallKit.framework in Frameworks */,
+				2E7A6D8E258066B2007EAD0B /* libsqlite3.0.tbd in Frameworks */,
+				44559035DEA52855848A0439 /* Pods_DetectCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,18 +121,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405A597970DB3E2B141910CD /* Pods_CallDirectoryHandler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C107082602811135AE7028F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F1FDEF40FAEE4B19DE159BC /* Pods-CallDirectoryHandler.debug.xcconfig */,
+				4B60CBA1F0C7FE05B00799C6 /* Pods-CallDirectoryHandler.release.xcconfig */,
+				A8156E63F068E96559B64E1A /* Pods-DetectCall.debug.xcconfig */,
+				148E5105EC68BD19F751D692 /* Pods-DetectCall.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2E5543D52567319400ED8071 = {
 			isa = PBXGroup;
 			children = (
 				2E5543E02567319400ED8071 /* DetectCall */,
 				2E5544032567341C00ED8071 /* CallDirectoryHandler */,
 				2E5543DF2567319400ED8071 /* Products */,
+				1C107082602811135AE7028F /* Pods */,
+				D028B43B833757D847A8A8A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +162,7 @@
 		2E5543E02567319400ED8071 /* DetectCall */ = {
 			isa = PBXGroup;
 			children = (
+				2E7A6D9125806759007EAD0B /* fmdb */,
 				2E20B8CA256F783D005C6253 /* DetectCall.entitlements */,
 				2E5543E12567319400ED8071 /* AppDelegate.h */,
 				2E5543E22567319400ED8071 /* AppDelegate.m */,
@@ -130,12 +185,44 @@
 		2E5544032567341C00ED8071 /* CallDirectoryHandler */ = {
 			isa = PBXGroup;
 			children = (
+				2E6F7FBC2581EE1100847DA3 /* DBData3.json */,
+				2E7C9C312580ABAE00EB360E /* DBData.json */,
+				2E0682C52581E7B2009A4B44 /* DBData2.json */,
 				2E20B8CD256F788B005C6253 /* CallDirectoryHandler.entitlements */,
 				2E5544042567341C00ED8071 /* CallDirectoryHandler.h */,
 				2E5544052567341D00ED8071 /* CallDirectoryHandler.m */,
 				2E5544072567341D00ED8071 /* Info.plist */,
 			);
 			path = CallDirectoryHandler;
+			sourceTree = "<group>";
+		};
+		2E7A6D9125806759007EAD0B /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				2E7A6D9225806759007EAD0B /* FMDatabase.h */,
+				2E7A6D9325806759007EAD0B /* FMDatabaseQueue.m */,
+				2E7A6D9425806759007EAD0B /* FMResultSet.h */,
+				2E7A6D9525806759007EAD0B /* FMDatabasePool.h */,
+				2E7A6D9625806759007EAD0B /* FMDatabaseAdditions.m */,
+				2E7A6D9725806759007EAD0B /* FMDatabase.m */,
+				2E7A6D9825806759007EAD0B /* FMDatabaseQueue.h */,
+				2E7A6D9925806759007EAD0B /* FMDB.h */,
+				2E7A6D9A25806759007EAD0B /* FMDatabaseAdditions.h */,
+				2E7A6D9B25806759007EAD0B /* FMDatabasePool.m */,
+				2E7A6D9C25806759007EAD0B /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		D028B43B833757D847A8A8A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EA6391B2580814D0016C738 /* CallKit.framework */,
+				2E7A6D8D258066B2007EAD0B /* libsqlite3.0.tbd */,
+				FE8DA7E734107135B0B3843C /* Pods_CallDirectoryHandler.framework */,
+				52846D5CBF3878024EF6B8DB /* Pods_DetectCall.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E5543FA2567319B00ED8071 /* Build configuration list for PBXNativeTarget "DetectCall" */;
 			buildPhases = (
+				7851A7B3E68B3350B3349C6C /* [CP] Check Pods Manifest.lock */,
 				2E5543DA2567319400ED8071 /* Sources */,
 				2E5543DB2567319400ED8071 /* Frameworks */,
 				2E5543DC2567319400ED8071 /* Resources */,
 				2E55440E2567341D00ED8071 /* Embed App Extensions */,
+				C7E6F0D0677B3FC4C1B84015 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E55440B2567341D00ED8071 /* Build configuration list for PBXNativeTarget "CallDirectoryHandler" */;
 			buildPhases = (
+				84A4EAF8925A1E42BA127F40 /* [CP] Check Pods Manifest.lock */,
 				2E5543FE2567341C00ED8071 /* Sources */,
 				2E5543FF2567341C00ED8071 /* Frameworks */,
 				2E5544002567341C00ED8071 /* Resources */,
@@ -183,7 +273,7 @@
 		2E5543D62567319400ED8071 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					2E5543DD2567319400ED8071 = {
 						CreatedOnToolsVersion = 12.1;
@@ -229,21 +319,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6F7FBD2581EE1100847DA3 /* DBData3.json in Resources */,
+				2E0682C62581E7B2009A4B44 /* DBData2.json in Resources */,
+				2E7C9C322580ABAE00EB360E /* DBData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7851A7B3E68B3350B3349C6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DetectCall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84A4EAF8925A1E42BA127F40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CallDirectoryHandler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7E6F0D0677B3FC4C1B84015 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DetectCall/Pods-DetectCall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DetectCall/Pods-DetectCall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DetectCall/Pods-DetectCall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E5543DA2567319400ED8071 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA6391F2580816A0016C738 /* CallDirectoryHandler.entitlements in Sources */,
+				2EA639202580816A0016C738 /* CallDirectoryHandler.h in Sources */,
+				2EA639212580816A0016C738 /* CallDirectoryHandler.m in Sources */,
 				2E5543F72567319B00ED8071 /* main.m in Sources */,
 				2E5543EF2567319400ED8071 /* DetectCall.xcdatamodeld in Sources */,
 				2E5543E92567319400ED8071 /* ViewController.m in Sources */,
 				2E5543E32567319400ED8071 /* AppDelegate.m in Sources */,
+				2E7A6DA22580675A007EAD0B /* FMResultSet.m in Sources */,
+				2E7A6DA12580675A007EAD0B /* FMDatabasePool.m in Sources */,
 				2E5543E62567319400ED8071 /* SceneDelegate.m in Sources */,
+				2E7A6D9F25806759007EAD0B /* FMDatabaseAdditions.m in Sources */,
+				2E7A6D9E25806759007EAD0B /* FMDatabaseQueue.m in Sources */,
+				2E7A6DA02580675A007EAD0B /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -389,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -399,6 +564,7 @@
 		};
 		2E5543FB2567319B00ED8071 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8156E63F068E96559B64E1A /* Pods-DetectCall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -418,6 +584,7 @@
 		};
 		2E5543FC2567319B00ED8071 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148E5105EC68BD19F751D692 /* Pods-DetectCall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,8 +604,8 @@
 		};
 		2E55440C2567341D00ED8071 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F1FDEF40FAEE4B19DE159BC /* Pods-CallDirectoryHandler.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = CallDirectoryHandler/CallDirectoryHandler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83BLQCSHWL;
@@ -457,8 +624,8 @@
 		};
 		2E55440D2567341D00ED8071 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B60CBA1F0C7FE05B00799C6 /* Pods-CallDirectoryHandler.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = CallDirectoryHandler/CallDirectoryHandler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83BLQCSHWL;
