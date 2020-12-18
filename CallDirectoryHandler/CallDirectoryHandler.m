@@ -34,36 +34,50 @@
 - (void)addAllIdentificationPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
 
     NSLog(@"DETECT // [add All Identification PhoneNumbers To Context]");
-    [self printCurrentTime];
+//    [self printCurrentTime];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DBData" ofType:@"json"];
     FILE *file = fopen([filePath UTF8String], "r");
     char buffer[256];
     int count = 0;
     
+    NSString * string = [[NSString alloc] init];
+    id json = nil;
+    NSString * name = [[NSString alloc] init];
+    NSString * num = [[NSString alloc] init];
+    NSNumber * myNumber = [[NSNumber alloc] init];
+    
+    
+    [self printCurrentTime];
+    
+    
+
     @try{
         while (fgets(buffer, 256, file) != NULL){
-            
+
             count += 1;
-                
-            NSString* string = [NSString stringWithUTF8String:buffer];
+
+            string = [NSString stringWithUTF8String:buffer];
             string = [self parseString:string];
-            
-            id json = [self stringToJson:string];
-            
-            NSString * name = [json objectForKey:@"name"];
-            NSString * num = [json objectForKey:@"phoneNumber"];
-        
-            NSNumber * myNumber = [self stringToNumber:num];
-            
-            if(count % 1000 == 0){
+
+            json = [self stringToJson:string];
+
+            name = [json objectForKey:@"name"];
+            num = [json objectForKey:@"phoneNumber"];
+
+            myNumber = [self stringToNumber:num];
+
+            if(count % 100 == 0){
                 NSLog(@"DETECT // number : %@ // label : %@ // ", [myNumber stringValue], name);
             }
-            
             // 실제 값을 확장된 전화번호에 입력
             [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[myNumber  unsignedLongLongValue] label:name];
-            
-            
+
+            string = @"";
+            name = @"";
+            num = @"";
+            myNumber = [[NSNumber alloc] init];
+
         }
     }@catch(NSException * e){
         NSLog(@"DETECT // error - try - catch : %@ // %@ ", [e name], [e reason]);
