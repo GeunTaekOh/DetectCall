@@ -13,9 +13,14 @@
 #import <YAJLO/YAJLParser.h>
 
 
-@interface CallDirectoryHandler : CXCallDirectoryProvider
-
-@property (retain, nonatomic) NSMutableArray * phoneBookDatas;
+@interface CallDirectoryHandler : CXCallDirectoryProvider{
+    int numberOfReadLines;
+    int numberOfTotalLines;
+    int currentPos;
+    bool isOpenBefore;
+    NSString * filePath;
+    CXCallDirectoryExtensionContext * innerContext;
+}
 
 
 @end

@@ -12,15 +12,16 @@
 
 @implementation CallDirectoryHandler
 
+
+
 - (void)beginRequestWithExtensionContext:(CXCallDirectoryExtensionContext *)context {
     context.delegate = self;
+    
+    numberOfReadLines = 5000;
 
     NSLog(@"DETECT // [begin Request With Extension Context]]");
 
     [self printCurrentTime];
-    
-    //_phoneBookDatas = [self loadJsonFile];
-    //NSLog(@"DETECT // phonebook datas : %@",_phoneBookDatas);
     
     [self addAllIdentificationPhoneNumbersToContext:context];
 
@@ -31,93 +32,101 @@
     
 }
 
+
 - (void)addAllIdentificationPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
 
     NSLog(@"DETECT // [add All Identification PhoneNumbers To Context]");
-//    [self printCurrentTime];
+
+    innerContext = context;
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DBData" ofType:@"json"];
-    FILE *file = fopen([filePath UTF8String], "r");
-    char buffer[256];
-    int count = 0;
-    
-    NSString * string = [[NSString alloc] init];
-    id json = nil;
-    NSString * name = [[NSString alloc] init];
-    NSString * num = [[NSString alloc] init];
-    NSNumber * myNumber = [[NSNumber alloc] init];
-    
-    
-    [self printCurrentTime];
-    
-    
+    if(!isOpenBefore){
+        NSLog(@"DETECT // now first open");
+        isOpenBefore = true;
+        
+        
+        
+        filePath = [[NSBundle mainBundle] pathForResource:@"DBData" ofType:@"json"];
+        numberOfTotalLines = [self countFileTotalLines:filePath];
+        
+        NSLog(@"DETECT // total line : %d",numberOfTotalLines);
+        
+        [self addAllIdentificationPhoneNumbersToContext:context];
+        
+    }else{
+        
+        NSLog(@"DETECT // more than second loop");
+        
+        FILE *file = fopen([filePath UTF8String], "r");
+        
+        char buffer[256];
+        int iter = 0;
+        
+        NSString * string = [[NSString alloc] init];
+        id json = nil;
+        NSString * name = [[NSString alloc] init];
+        NSString * num = [[NSString alloc] init];
+        NSNumber * myNumber = [[NSNumber alloc] init];
+        
+        @try{
+            while ((fgets(buffer, 256, file) != NULL) && currentPos < numberOfReadLines){
+        
+                if(iter < currentPos){    //iter 는 cursor 느낌. currentpos 는 지금까지 읽은 데이터.
+                    iter +=1 ;
+                    //NSLog(@"DETECT // ==== empty : %d ====== ", iter);
+                    continue;
+                }else{
+                    
+                    if(iter > 4950 || currentPos > 4950){
+                        NSLog(@"DETECT // current pos : %d",currentPos );
+                        NSLog(@"DETECT // iter : %d",iter );
+                        NSLog(@"DETECT // numberOfReadLines : %d", numberOfReadLines);
+                    }
+                    
+                    iter += 1;
+                    currentPos += 1;
 
-    @try{
-        while (fgets(buffer, 256, file) != NULL){
-
-            count += 1;
-
-            string = [NSString stringWithUTF8String:buffer];
-            string = [self parseString:string];
-
-            json = [self stringToJson:string];
-
-            name = [json objectForKey:@"name"];
-            num = [json objectForKey:@"phoneNumber"];
-
-            myNumber = [self stringToNumber:num];
-
-            if(count % 100 == 0){
-                NSLog(@"DETECT // number : %@ // label : %@ // ", [myNumber stringValue], name);
+                    string = [NSString stringWithUTF8String:buffer];
+                    string = [self parseString:string];
+            
+                    json = [self stringToJson:string];
+            
+                    name = [json objectForKey:@"name"];
+                    num = [json objectForKey:@"phoneNumber"];
+            
+                    myNumber = [self stringToNumber:num];
+            
+                    if(iter % 100 == 0){
+                        NSLog(@"DETECT // number : %@ // label : %@ // ", [myNumber stringValue], name);
+                    }
+                        // 실제 값을 확장된 전화번호에 입력
+                    [innerContext addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[myNumber  unsignedLongLongValue] label:name];
+            
+                    string = @"";
+                    name = @"";
+                    num = @"";
+                    myNumber = [[NSNumber alloc] init];
+            
+                    
+                }
             }
-            // 실제 값을 확장된 전화번호에 입력
-            [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[myNumber  unsignedLongLongValue] label:name];
-
-            string = @"";
-            name = @"";
-            num = @"";
-            myNumber = [[NSNumber alloc] init];
-
+            
+            numberOfReadLines *= 2;
+            
+            if(currentPos < numberOfTotalLines){
+                //[self logic];
+                //addAllIdentificationPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
+                [self addAllIdentificationPhoneNumbersToContext:context];
+            }
+            
+        }@catch(NSException * e){
+            NSLog(@"DETECT // error - try - catch : %@ // %@ ", [e name], [e reason]);
+        }@finally{
+            NSLog(@"DETECT // finally ");
         }
-    }@catch(NSException * e){
-        NSLog(@"DETECT // error - try - catch : %@ // %@ ", [e name], [e reason]);
-    }@finally{
-        NSLog(@"DETECT // finally ");
     }
-       
-    [self printCurrentTime];
     
     
-//
-//
-//
-//
-//    NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults] initWithSuiteName:@"group.com.geuntaek.DetectCall"];
-//
-//    NSMutableDictionary<NSNumber *, NSString *> *labelsKeyedByPhoneNumber = [[NSMutableDictionary alloc] init];
-//    NSData * data = [userDefaults objectForKey:@"dbData"];
-//    NSArray * dbData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-//
-//    NSLog(@"DETECT // _phone book data : %@",_phoneBookDatas);
-//
-//    for (NSDictionary * data in _phoneBookDatas){
-//        NSString * name = [data objectForKey:@"name"];
-//        NSNumber * num = [data objectForKey:@"phoneNumber"];
-//        [labelsKeyedByPhoneNumber setObject:name forKey:num];
-//    }
-////    NSLog(@"DETECT // sort data start");
-////    [self printCurrentTime];
-//    for(NSNumber * phoneNumber in [labelsKeyedByPhoneNumber.allKeys sortedArrayUsingSelector:@selector(compare:)]){
-//
-//        NSString * label = labelsKeyedByPhoneNumber[phoneNumber];
-//        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-//        f.numberStyle = NSNumberFormatterDecimalStyle;
-//        NSNumber * myNumber = [f numberFromString:phoneNumber];
-//        NSLog(@"DETECT // number : %@ // label : %@ // ", [myNumber stringValue], label);
-//        [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[myNumber unsignedLongLongValue] label:label];
-//    }
-//    NSLog(@"DETECT // sort data end");
-//    [self printCurrentTime];
+    
 }
 
 
@@ -166,6 +175,20 @@
     NSNumber * result = [f numberFromString:numStr];
     
     return result;
+}
+
+- (int) countFileTotalLines:(NSString *)filePath{
+    
+    FILE *file = fopen([filePath UTF8String], "r");
+
+    char buffer[256];
+    int count = 0;
+    
+    while (fgets(buffer, 256, file) != NULL){
+        count+=1;
+    }
+    
+    return count;
 }
 
 
